@@ -29,7 +29,7 @@ if(resStatus !== 200) {
         body = ucsResponseWrapperType.encode(ucsResponseWrapperMessage).finish();
         console.log('customize');
     } else {
-        $notification.post('spotify premium', "error:", method + "," + url);
+        $notification.post('spotify unlock premium', "url/method:", method + "," + url);
     }
     // console.log(`${body.byteLength}---${body.buffer.byteLength}`);
     if(isQuanX){
@@ -52,7 +52,7 @@ function processMapObj(accountAttributesMapObj){
     accountAttributesMapObj['catalogue'] = {stringValue : 'premium'};
     accountAttributesMapObj['high-bitrate'] = {boolValue : true};
     accountAttributesMapObj['libspotify'] = {boolValue : true};
-  
+    
     accountAttributesMapObj['nft-disabled'] = {stringValue : '1'};
     accountAttributesMapObj['shuffle'] = {boolValue : false};
     accountAttributesMapObj['audio-quality'] = {stringValue : '1'};
@@ -61,15 +61,15 @@ function processMapObj(accountAttributesMapObj){
     accountAttributesMapObj['can_use_superbird'] = {boolValue : true};
     accountAttributesMapObj['type'] = {stringValue : 'premium'};
 
-
+    
     accountAttributesMapObj['loudness-levels'] = {stringValue : '1:-9.0,0.0,3.0:-2.0'};
     accountAttributesMapObj['payments-initial-campaign'] = {stringValue : 'web'};
     accountAttributesMapObj['shuffle-eligible'] = {boolValue : true};
     accountAttributesMapObj['unrestricted'] = {boolValue : true};
-
+    
     accountAttributesMapObj['com.spotify.madprops.use.ucs.product.state'] = {boolValue : true};
 
     delete accountAttributesMapObj['ad-use-adlogic'];
     delete accountAttributesMapObj['ad-catalogues'];
-
-  
+    
+}
