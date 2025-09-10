@@ -29,7 +29,7 @@ if(resStatus !== 200) {
         body = ucsResponseWrapperType.encode(ucsResponseWrapperMessage).finish();
         console.log('customize');
     } else {
-        $notification.post('spotify unlock premium', "url/method:", method + "," + url);
+        $notification.post('spotify premium', "route/error:", method + "," + url);
     }
     // console.log(`${body.byteLength}---${body.buffer.byteLength}`);
     if(isQuanX){
@@ -71,5 +71,5 @@ function processMapObj(accountAttributesMapObj){
 
     delete accountAttributesMapObj['ad-use-adlogic'];
     delete accountAttributesMapObj['ad-catalogues'];
-    
+
 }
